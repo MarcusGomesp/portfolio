@@ -15,9 +15,9 @@
 <body>
     <section class="hero">
         <div class="container">
-            <img src="imagem/FotoPerfil.jpg" alt="Marcus Vinicius" class="profile-img floating">
+            <img src="imagem/FotoPerfil.png" alt="Marcus Vinicius" class="profile-img floating">
             <h1>Marcus Vinicius Gomes Pereira</h1>
-            <p class="subtitle">Desenvolvedor Backend .NET</p>
+            <p class="subtitle">Desenvolvedor Back-End</p>
             <div class="contact-info">
                 <p><i class="fas fa-envelope"></i> marcus_1609@outlook.com</p>
             </div>
@@ -32,9 +32,10 @@
 
     <section class="about container">
         <h2>Sobre Mim</h2>
-        <p>Desenvolvedor Backend com formação em Análise e Desenvolvimento de Sistemas e cursando Ciência da Computação.
-            Apaixonado por criar soluções eficientes com .NET, ASP.NET Core e APIs REST. Combinando experiência técnica
-            em desenvolvimento de software com habilidades em resolução de problemas.</p>
+        <p>Sou profissional da área de tecnologia, formado em Análise e Desenvolvimento de Sistemas e atualmente cursando o 7º semestre de Ciência da Computação. 
+            Tenho experiência no desenvolvimento de APIs RESTful com C# e .NET, 
+            atuando em projetos acadêmicos com foco em arquitetura em camadas, 
+            integração com banco de dados e aplicação de boas práticas de desenvolvimento back-end.</p>
 
         <div class="skills-container">
             <div class="skill-item">
@@ -55,69 +56,41 @@
         </div>
     </section>
 
-    <section class="education container">
-        <h2>Formação Acadêmica</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Bacharelado em Ciência da Computação</h3>
-                    <p class="timeline-date">Fevereiro 2025 - Dezembro 2026 (Previsão)</p>
-                    <p class="institution">Universidade Nove de Julho</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Tecnologia em Análise e Desenvolvimento de Sistemas</h3>
-                    <p class="timeline-date">Fevereiro 2022 - Setembro 2024</p>
-                    <p class="institution">Universidade Nove de Julho</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-    <section class="certifications container">
-        <h2>Certificações & Cursos</h2>
-        <div class="cert-grid">
-            <div class="cert-card">
-                <i class="fas fa-certificate"></i>
-                <h3>Programação Orientada a Objetos com C#</h3>
-                <p>Udemy</p>
-            </div>
-            <div class="cert-card">
-                <i class="fas fa-certificate"></i>
-                <h3>Linguagem de Programação Avançada C#</h3>
-                <p>Udemy</p>
-            </div>
-            <div class="cert-card">
-                <i class="fas fa-certificate"></i>
-                <h3>Web API ASP.NET Core Essencial (.NET 8)</h3>
-                <p>Udemy</p>
-            </div>
-            <div class="cert-card">
-                <i class="fas fa-certificate"></i>
-                <h3>Deploy Rápido: ASP.NET C#</h3>
-                <p>Udemy</p>
-            </div>
-        </div>
-    </section>
-
-
-
-
     <section class="projects container">
         <h2>Projetos Destacados</h2>
         <div class="project-grid">
+
+
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fas fa-database"></i>
+                    <h3>Lumi - Sistema de RH com Inteligência Artificial</h3>
+                </div>
+                <div class="project-content">
+                    <p>Sistema de recrutamento com avaliação automatizada de currículos utilizando IA para análise de compatibilidade com vagas.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">ASP.NET Core</span>
+                        <span class="tech-badge">Entity Framework</span>
+                        <span class="tech-badge">IA (Análise de Skills)</span>
+                        <span class="tech-badge">JWT</span>
+                        <span class="tech-badge">Postman</span>
+                    </div>
+                    <ul class="project-features">
+                        <li>Sistema completo de cadastro e autenticação de usuários</li>
+                        <li>Upload e processamento de currículos (PDF, Word, DOC)</li>
+                        <li>Avaliação automática por IA com base em percentual mínimo de compatibilidader</li>
+                        <li>Armazenamento estruturado dos resultados por candidato e vaga</li>
+                        <li>Testes completos e validação de endpoints via Postman</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/MarcusGomesp/ProjetoFaculLumi/tree/main/ProjetoFaculdade6Semestre/ProjetoFaculdade6Semestre" target="_blank"
+                            class="btn github-btn">
+                            <i class="fab fa-github"></i> Ver Código
+                        </a>
+                    </div>
+                </div>
+            </div>
+
 
             <div class="project-card">
                 <div class="project-header">
@@ -148,31 +121,6 @@
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="project-header">
-                    <i class="fas fa-database"></i>
-                    <h3>Web API de Cadastro com Autenticação</h3>
-                </div>
-                <div class="project-content">
-                    <p>API RESTful completa com operações CRUD e sistema de autenticação por tokens</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">ASP.NET Core</span>
-                        <span class="tech-badge">JWT</span>
-                        <span class="tech-badge">Entity Framework</span>
-                    </div>
-                    <ul class="project-features">
-                        <li>Sistema completo de gerenciamento de usuários</li>
-                        <li>Validação de dados em camadas</li>
-                        <li>Documentação com Swagger</li>
-                    </ul>
-                    <div class="project-links">
-                        <a href="https://github.com/MarcusGomesp/ProjetoWebApiCadastro" target="_blank"
-                            class="btn github-btn">
-                            <i class="fab fa-github"></i> Ver Código
-                        </a>
-                    </div>
-                </div>
-            </div>
 
             <div class="project-card">
                 <div class="project-header">
@@ -199,12 +147,72 @@
                     </div>
                 </div>
             </div>
+            <!---->
         </div>
-
-
 
     </section>
 
+
+
+    <section class="education container">
+        <h2>Formação Acadêmica</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="timeline-content">
+                    <h3>Bacharelado em Ciência da Computação</h3>
+                    <p class="timeline-date">Fevereiro 2025 - Dezembro 2026 (Previsão)</p>
+                    <p class="institution">Universidade Nove de Julho</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="timeline-content">
+                    <h3>Tecnologia em Análise e Desenvolvimento de Sistemas</h3>
+                    <p class="timeline-date">Fevereiro 2022 - Setembro 2024</p>
+                    <p class="institution">Universidade Nove de Julho</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="certifications container">
+        <h2>Certificações & Cursos</h2>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <i class="fas fa-certificate"></i>
+                <h3>Programação Orientada a Objetos com C#</h3>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-certificate"></i>
+                <h3>Linguagem de Programação Avançada C#</h3>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-certificate"></i>
+                <h3>Web API ASP.NET Core Essencial (.NET 8)</h3>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-certificate"></i>
+                <h3>Testes Automáticos de Software</h3>
+            </div>
+             <div class="cert-card">
+                <i class="fas fa-certificate"></i>
+                <h3>Postman: Do Zero ao Avançado</h3>
+            </div>
+             <div class="cert-card">
+                <i class="fas fa-certificate"></i>
+                <h3>RabbitMQ</h3>
+            </div>
+            
+        </div>
+    </section>
 
 </body>
 
