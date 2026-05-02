@@ -1,190 +1,214 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcus Vinicius | Desenvolvedor .NET Backend</title>
+    
+    <!-- Fontes Profissionais -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-
-    </style>
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
 </head>
-
 <body>
-    <section class="hero">
+
+    <!-- Fundo Canvas Animado -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="container nav-content">
+            <div class="logo">MV.Dev</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#formacao">Formação</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Seção Hero -->
+    <section id="inicio" class="hero reveal active">
         <div class="container">
-            <img src="imagem/FotoPerfil.png" alt="Marcus Vinicius" class="profile-img floating">
-            <h1>Marcus Vinicius Gomes Pereira</h1>
-            <p class="subtitle">Desenvolvedor Back-End</p>
-            <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> marcus_1609@outlook.com</p>
+            <div class="profile-container">
+                <div class="glow-ring"></div>
+                <!-- Substitua pelo caminho real da sua foto -->
+                <img src="imagem/FotoPerfil.png" alt="Marcus Vinicius" class="profile-img" onerror="this.src=''; this.onerror=null;">
             </div>
-            <div class="social-links" style="margin-top: 1.5rem;">
-                <a href="https://www.linkedin.com/in/marcus-vinicius-gomes-226552249/" target="_blank"
-                    class="btn github-btn">
-                    <i class="fab fa-linkedin"></i> LinkedIn
+            
+            <h1>Marcus Vinicius Gomes</h1>
+            <p class="subtitle tech-font">> Desenvolvedor <span>Back-End</span> _</p>
+            
+            <div class="contact-info">
+                <i class="fas fa-envelope"></i> marcus_1609@outlook.com
+            </div>
+            
+            <div style="margin-top: 2rem;">
+                <a href="https://www.linkedin.com/in/marcus-vinicius-gomes-226552249/" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-linkedin"></i> Conectar no LinkedIn
+                </a>
+                <a href="#projetos" class="btn btn-outline">
+                    <i class="fas fa-code"></i> Ver Projetos
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="about container">
-        <h2>Sobre Mim</h2>
-        <p>Sou profissional da área de tecnologia, formado em Análise e Desenvolvimento de Sistemas e atualmente cursando o 7º semestre de Ciência da Computação. 
-            Tenho experiência no desenvolvimento de APIs RESTful com C# e .NET, 
-            atuando em projetos acadêmicos com foco em arquitetura em camadas, 
-            integração com banco de dados e aplicação de boas práticas de desenvolvimento back-end.</p>
-
-        <div class="skills-container">
-            <div class="skill-item">
-                <i class="fab fa-microsoft"></i>
-                <h3>.NET Stack</h3>
-                <p>ASP.NET Core | C# | Entity Framework</p>
+    <!-- Seção Sobre -->
+    <section id="sobre" class="container reveal">
+        <h2 class="section-title"><span>01.</span> Sobre Mim</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Sou um profissional apaixonado por tecnologia, solucionador de problemas e arquiteto de sistemas eficientes. Formado em <strong>Análise e Desenvolvimento de Sistemas</strong> e atualmente cursando o 7º semestre de <strong>Ciência da Computação</strong>.</p>
+                <p>Minha especialidade é o ecossistema .NET. Tenho forte experiência no desenvolvimento de APIs RESTful utilizando C#, focando sempre em arquiteturas escaláveis (como arquitetura em camadas), integração robusta com bancos de dados relacionais e na aplicação rigorosa de boas práticas de desenvolvimento e Clean Code.</p>
             </div>
-            <div class="skill-item">
-                <i class="fas fa-code"></i>
-                <h3>Desenvolvimento</h3>
-                <p>APIs REST | SQL Server </p>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-tools"></i>
-                <h3>Ferramentas</h3>
-                <p>Git | Visual Studio</p>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-microsoft"></i>
+                    <h3>.NET Stack</h3>
+                    <p>C# | ASP.NET Core | Entity Framework Core | LINQ</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-server"></i>
+                    <h3>Arquitetura & API</h3>
+                    <p>APIs RESTful | JWT | Arquitetura em Camadas | Swagger</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Banco de Dados</h3>
+                    <p>SQL Server | Modelagem Relacional | Migrations</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Ferramentas</h3>
+                    <p>Git/GitHub | Visual Studio | Postman | RabbitMQ</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="projects container">
-        <h2>Projetos Destacados</h2>
-        <div class="project-grid">
-
-
+    <!-- Seção Projetos -->
+    <section id="projetos" class="container reveal">
+        <h2 class="section-title"><span>02.</span> Projetos em Destaque</h2>
+        <div class="projects-grid">
+            
+            <!-- Projeto 1 -->
             <div class="project-card">
-                <div class="project-header">
-                    <i class="fas fa-database"></i>
-                    <h3>Lumi - Sistema de RH com Inteligência Artificial</h3>
-                </div>
                 <div class="project-content">
-                    <p>Sistema de recrutamento com avaliação automatizada de currículos utilizando IA para análise de compatibilidade com vagas.</p>
-                    <div class="tech-stack">
+                    <div class="project-header">
+                        <i class="fas fa-brain"></i>
+                        <h3>Lumi - RH com IA</h3>
+                    </div>
+                    <p class="project-desc">Sistema robusto de recrutamento com avaliação automatizada de currículos, utilizando Inteligência Artificial para análise profunda de compatibilidade com vagas.</p>
+                    <div class="tech-tags">
                         <span class="tech-badge">ASP.NET Core</span>
                         <span class="tech-badge">Entity Framework</span>
-                        <span class="tech-badge">IA (Análise de Skills)</span>
+                        <span class="tech-badge">IA API</span>
                         <span class="tech-badge">JWT</span>
-                        <span class="tech-badge">Postman</span>
                     </div>
                     <ul class="project-features">
-                        <li>Sistema completo de cadastro e autenticação de usuários</li>
-                        <li>Upload e processamento de currículos (PDF, Word, DOC)</li>
-                        <li>Avaliação automática por IA com base em percentual mínimo de compatibilidader</li>
-                        <li>Armazenamento estruturado dos resultados por candidato e vaga</li>
-                        <li>Testes completos e validação de endpoints via Postman</li>
+                        <li>Cadastro completo e autenticação segura de usuários.</li>
+                        <li>Upload e parsing de currículos (PDF, Word, DOC).</li>
+                        <li>Análise automática (IA) gerando percentual de "Match".</li>
+                        <li>Armazenamento estruturado e relatórios por candidato.</li>
                     </ul>
-                    <div class="project-links">
-                        <a href="https://github.com/MarcusGomesp/ProjetoFaculLumi/tree/main/ProjetoFaculdade6Semestre/ProjetoFaculdade6Semestre" target="_blank"
-                            class="btn github-btn">
-                            <i class="fab fa-github"></i> Ver Código
+                    <div style="margin-top: auto;">
+                        <a href="https://github.com/MarcusGomesp/ProjetoFaculLumi/tree/main/ProjetoFaculdade6Semestre/ProjetoFaculdade6Semestre" target="_blank" class="btn btn-outline">
+                            <i class="fab fa-github"></i> Repositório
                         </a>
                     </div>
                 </div>
             </div>
 
-
+            <!-- Projeto 2 -->
             <div class="project-card">
-                <div class="project-header">
-                    <i class="fas fa-database"></i>
-                    <h3>Web API MeuPonto</h3>
-                </div>
                 <div class="project-content">
-                    <p>API para gestão de Recursos Humanos, com controle de horas trabalhadas e solicitações de ajuste
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">C#</span>
+                    <div class="project-header">
+                        <i class="fas fa-clock"></i>
+                        <h3>Web API MeuPonto</h3>
+                    </div>
+                    <p class="project-desc">API completa para gestão de Recursos Humanos, focada no controle preciso de horas trabalhadas, ponto eletrônico e gerenciamento de solicitações de ajuste.</p>
+                    <div class="tech-tags">
+                        <span class="tech-badge">C# 10+</span>
                         <span class="tech-badge">.NET</span>
-                        <span class="tech-badge">Entity Framework</span>
+                        <span class="tech-badge">SQL Server</span>
                     </div>
                     <ul class="project-features">
-                        <li>Cadastro e autenticação de usuários</li>
-                        <li>Registro de horas trabalhadas</li>
-                        <li>Controle de banco de horas</li>
-                        <li>Solicitação de ajustes de ponto</li>
-                        <li>Controle de banco de horas</li>
+                        <li>Sistema de registro de entrada/saída de ponto.</li>
+                        <li>Cálculo automatizado de banco de horas.</li>
+                        <li>Workflow para solicitação e aprovação de ajustes.</li>
+                        <li>Endpoints otimizados e testados.</li>
                     </ul>
-                    <div class="project-links">
-                        <a href="https://github.com/MarcusGomesp/ApiProjetoFaculdadeMeuPontoData" target="_blank"
-                            class="btn github-btn">
-                            <i class="fab fa-github"></i> Ver Código
+                    <div style="margin-top: auto;">
+                        <a href="https://github.com/MarcusGomesp/ApiProjetoFaculdadeMeuPontoData" target="_blank" class="btn btn-outline">
+                            <i class="fab fa-github"></i> Repositório
                         </a>
                     </div>
                 </div>
             </div>
 
-
+            <!-- Projeto 3 -->
             <div class="project-card">
-                <div class="project-header">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Plataforma de Artigos para Estudantes</h3>
-                </div>
                 <div class="project-content">
-                    <p>Site colaborativo com artigos sobre programação e tendências tecnológicas</p>
-                    <div class="tech-stack">
+                    <div class="project-header">
+                        <i class="fas fa-newspaper"></i>
+                        <h3>Plataforma de Artigos</h3>
+                    </div>
+                    <p class="project-desc">Aplicação Front-End colaborativa destinada a estudantes de tecnologia para compartilhamento de artigos, tutoriais e tendências de mercado.</p>
+                    <div class="tech-tags">
                         <span class="tech-badge">HTML5</span>
                         <span class="tech-badge">CSS3</span>
                         <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">Integração API</span>
                     </div>
                     <ul class="project-features">
-                        <li>Interface responsiva</li>
-                        <li>Sistema de categorização</li>
-                        <li>Integração com APIs</li>
+                        <li>Interface fluída, moderna e 100% responsiva.</li>
+                        <li>Sistema dinâmico de categorização e busca.</li>
+                        <li>Consumo de APIs externas via Fetch API.</li>
                     </ul>
-                    <div class="project-links">
-                        <a href="https://github.com/KauanG-bot/Programming-Students-Article" target="_blank"
-                            class="btn github-btn">
-                            <i class="fab fa-github"></i> Ver Projeto
+                    <div style="margin-top: auto;">
+                        <a href="https://github.com/KauanG-bot/Programming-Students-Article" target="_blank" class="btn btn-outline">
+                            <i class="fab fa-github"></i> Repositório
                         </a>
                     </div>
                 </div>
             </div>
-            <!---->
-        </div>
 
+        </div>
     </section>
 
-
-
-    <section class="education container">
-        <h2>Formação Acadêmica</h2>
+    <!-- Seção Formação -->
+    <section id="formacao" class="container reveal">
+        <h2 class="section-title"><span>03.</span> Trajetória Acadêmica</h2>
+        
         <div class="timeline">
             <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
+                <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
                 <div class="timeline-content">
+                    <div class="timeline-date">Fev 2025 — Dez 2026 (Previsão)</div>
                     <h3>Bacharelado em Ciência da Computação</h3>
-                    <p class="timeline-date">Fevereiro 2025 - Dezembro 2026 (Previsão)</p>
-                    <p class="institution">Universidade Nove de Julho</p>
+                    <p style="color: var(--text-muted); margin-top: 5px;">Universidade Nove de Julho</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px; color: #cbd5e1;">Aprofundamento em algoritmos complexos, estrutura de dados, inteligência artificial e arquitetura de computadores.</p>
                 </div>
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
+                <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
                 <div class="timeline-content">
-                    <h3>Tecnologia em Análise e Desenvolvimento de Sistemas</h3>
-                    <p class="timeline-date">Fevereiro 2022 - Setembro 2024</p>
-                    <p class="institution">Universidade Nove de Julho</p>
+                    <div class="timeline-date">Fev 2022 — Set 2024</div>
+                    <h3>Análise e Desenvolvimento de Sistemas</h3>
+                    <p style="color: var(--text-muted); margin-top: 5px;">Universidade Nove de Julho</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px; color: #cbd5e1;">Foco prático em engenharia de software, modelagem de banco de dados e desenvolvimento ágil de aplicações web e backend.</p>
                 </div>
             </div>
         </div>
-    </section>
 
-
-
-    <section class="certifications container">
-        <h2>Certificações & Cursos</h2>
+        <h3 style="text-align: center; margin: 4rem 0 2rem; font-size: 1.8rem;">Certificações & Cursos</h3>
         <div class="cert-grid">
             <div class="cert-card">
                 <i class="fas fa-certificate"></i>
@@ -192,7 +216,7 @@
             </div>
             <div class="cert-card">
                 <i class="fas fa-certificate"></i>
-                <h3>Linguagem de Programação Avançada C#</h3>
+                <h3>Linguagem Avançada C#</h3>
             </div>
             <div class="cert-card">
                 <i class="fas fa-certificate"></i>
@@ -202,18 +226,25 @@
                 <i class="fas fa-certificate"></i>
                 <h3>Testes Automáticos de Software</h3>
             </div>
-             <div class="cert-card">
+            <div class="cert-card">
                 <i class="fas fa-certificate"></i>
                 <h3>Postman: Do Zero ao Avançado</h3>
             </div>
-             <div class="cert-card">
+            <div class="cert-card">
                 <i class="fas fa-certificate"></i>
-                <h3>RabbitMQ</h3>
+                <h3>Mensageria com RabbitMQ</h3>
             </div>
-            
         </div>
     </section>
 
-</body>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="tech-font" style="margin-bottom: 10px;">> Desenvolvido com <i class="fas fa-heart" style="color: var(--primary);"></i> e código limpo.</p>
+            <p>&copy; 2026 Marcus Vinicius Gomes Pereira. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
+    <script src="script.js"></script>
+</body>
 </html>
