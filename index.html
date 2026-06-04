@@ -1,58 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcus Vinicius | Desenvolvedor .NET Backend</title>
-    
+
     <!-- Fontes Profissionais -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+
     <!-- Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-</head>
-<body>
+    <link rel="stylesheet" href="style.css">
 
-    <!-- Fundo Canvas Animado -->
+
+<body class="loading">
+
+     <!-- Tela de Carregamento -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-logo tech-font">&lt; MV.Dev /&gt;</div>
+            <div class="loader-bar-container">
+                <div class="loader-bar" id="loader-bar"></div>
+            </div>
+            <div class="loader-footer tech-font">
+                <span id="loader-text" class="loader-text">Inicializando sistema...</span>
+                <span id="loader-percentage">0%</span>
+            </div>
+        </div>
+    </div>
+
     <canvas id="bg-canvas"></canvas>
 
-    <!-- Header / Navbar -->
     <header>
         <div class="container nav-content">
             <div class="logo">MV.Dev</div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#formacao">Formação</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#inicio" data-i18n="nav-home">Início</a></li>
+                    <li><a href="#sobre" data-i18n="nav-about">Sobre</a></li>
+                    <li><a href="#projetos" data-i18n="nav-projects">Projetos</a></li>
+                    <li><a href="#formacao" data-i18n="nav-education">Formação</a></li>
+                    <li><a href="#certificacoes" data-i18n="nav-certs">Certificações</a></li>
+                </ul>
+                <button id="btn-lang" class="btn-lang">
+                    <i class="fas fa-globe"></i> <span id="current-lang-text">PT</span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Seção Hero -->
     <section id="inicio" class="hero reveal active">
         <div class="container">
             <div class="profile-container">
                 <div class="glow-ring"></div>
-                <!-- Substitua pelo caminho real da sua foto -->
                 <img src="imagem/FotoPerfil.png" alt="Marcus Vinicius" class="profile-img" onerror="this.src=''; this.onerror=null;">
             </div>
-            
+
             <h1>Marcus Vinicius Gomes</h1>
-            <p class="subtitle tech-font">> Desenvolvedor <span>Back-End</span> _</p>
-            
+            <p class="subtitle tech-font" data-i18n="hero-role">> Desenvolvedor <span>Back-End</span> _</p>
+
             <div class="contact-info">
                 <i class="fas fa-envelope"></i> marcus_1609@outlook.com
             </div>
-            
+
             <div style="margin-top: 2rem;">
-                <a href="https://www.linkedin.com/in/marcus-vinicius-gomes-226552249/" target="_blank" class="btn btn-primary">
+                <a href="https://www.linkedin.com/in/marcus-vinicius-gomes-226552249/" target="_blank" class="btn btn-primary" data-i18n="btn-linkedin">
                     <i class="fab fa-linkedin"></i> Conectar no LinkedIn
                 </a>
-                <a href="#projetos" class="btn btn-outline">
+                <a href="#projetos" class="btn btn-outline" data-i18n="btn-projects">
                     <i class="fas fa-code"></i> Ver Projetos
                 </a>
             </div>
@@ -61,11 +81,11 @@
 
     <!-- Seção Sobre -->
     <section id="sobre" class="container reveal">
-        <h2 class="section-title"><span>01.</span> Sobre Mim</h2>
+        <h2 class="section-title" data-i18n="about-title"><span>01.</span> Sobre Mim</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>Sou um profissional apaixonado por tecnologia, solucionador de problemas e arquiteto de sistemas eficientes. Formado em <strong>Análise e Desenvolvimento de Sistemas</strong> e atualmente cursando o 7º semestre de <strong>Ciência da Computação</strong>.</p>
-                <p>Minha especialidade é o ecossistema .NET. Tenho forte experiência no desenvolvimento de APIs RESTful utilizando C#, focando sempre em arquiteturas escaláveis (como arquitetura em camadas), integração robusta com bancos de dados relacionais e na aplicação rigorosa de boas práticas de desenvolvimento e Clean Code.</p>
+                <p data-i18n="about-p1">Sou um profissional apaixonado por tecnologia, solucionador de problemas e arquiteto de sistemas eficientes. Formado em <strong>Análise e Desenvolvimento de Sistemas</strong> e atualmente cursando o 7º semestre de <strong>Ciência da Computação</strong>.</p>
+                <p data-i18n="about-p2">Minha especialidade é o ecossistema .NET. Tenho forte experiência no desenvolvimento de APIs RESTful utilizando C#, focando sempre em arquiteturas escaláveis (como arquitetura em camadas), integração robusta com bancos de dados relacionais e na aplicação rigorosa de boas práticas de desenvolvimento e Clean Code.</p>
             </div>
             <div class="skills-grid">
                 <div class="skill-card">
@@ -75,17 +95,17 @@
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-server"></i>
-                    <h3>Arquitetura & API</h3>
+                    <h3 data-i18n="skill-arch">Arquitetura & API</h3>
                     <p>APIs RESTful | JWT | Arquitetura em Camadas | Swagger</p>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-database"></i>
-                    <h3>Banco de Dados</h3>
+                    <h3 data-i18n="skill-db">Banco de Dados</h3>
                     <p>SQL Server | Modelagem Relacional | Migrations</p>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-tools"></i>
-                    <h3>Ferramentas</h3>
+                    <h3 data-i18n="skill-tools">Ferramentas</h3>
                     <p>Git/GitHub | Visual Studio | Postman | RabbitMQ</p>
                 </div>
             </div>
@@ -94,17 +114,17 @@
 
     <!-- Seção Projetos -->
     <section id="projetos" class="container reveal">
-        <h2 class="section-title"><span>02.</span> Projetos em Destaque</h2>
+        <h2 class="section-title" data-i18n="projects-title"><span>02.</span> Projetos em Destaque</h2>
         <div class="projects-grid">
-            
+
             <!-- Projeto 1 -->
             <div class="project-card">
                 <div class="project-content">
                     <div class="project-header">
                         <i class="fas fa-brain"></i>
-                        <h3>Lumi - RH com IA</h3>
+                        <h3 data-i18n="proj1-title">Lumi - RH com IA</h3>
                     </div>
-                    <p class="project-desc">Sistema robusto de recrutamento com avaliação automatizada de currículos, utilizando Inteligência Artificial para análise profunda de compatibilidade com vagas.</p>
+                    <p class="project-desc" data-i18n="proj1-desc">Sistema robusto de recrutamento com avaliação automatizada de currículos, utilizando Inteligência Artificial para análise profunda de compatibilidade com vagas.</p>
                     <div class="tech-tags">
                         <span class="tech-badge">ASP.NET Core</span>
                         <span class="tech-badge">Entity Framework</span>
@@ -112,13 +132,13 @@
                         <span class="tech-badge">JWT</span>
                     </div>
                     <ul class="project-features">
-                        <li>Cadastro completo e autenticação segura de usuários.</li>
-                        <li>Upload e parsing de currículos (PDF, Word, DOC).</li>
-                        <li>Análise automática (IA) gerando percentual de "Match".</li>
-                        <li>Armazenamento estruturado e relatórios por candidato.</li>
+                        <li data-i18n="proj1-f1">Cadastro completo e autenticação segura de usuários.</li>
+                        <li data-i18n="proj1-f2">Upload e parsing de currículos (PDF, Word, DOC).</li>
+                        <li data-i18n="proj1-f3">Análise automática (IA) gerando percentual de "Match".</li>
+                        <li data-i18n="proj1-f4">Armazenamento estruturado e relatórios por candidato.</li>
                     </ul>
                     <div style="margin-top: auto;">
-                        <a href="https://github.com/MarcusGomesp/ProjetoFaculLumi/tree/main/ProjetoFaculdade6Semestre/ProjetoFaculdade6Semestre" target="_blank" class="btn btn-outline">
+                        <a href="https://github.com/MarcusGomesp/ProjetoFaculLumi/tree/main/ProjetoFaculdade6Semestre/ProjetoFaculdade6Semestre" target="_blank" class="btn btn-outline" data-i18n="btn-repo">
                             <i class="fab fa-github"></i> Repositório
                         </a>
                     </div>
@@ -132,20 +152,20 @@
                         <i class="fas fa-clock"></i>
                         <h3>Web API MeuPonto</h3>
                     </div>
-                    <p class="project-desc">API completa para gestão de Recursos Humanos, focada no controle preciso de horas trabalhadas, ponto eletrônico e gerenciamento de solicitações de ajuste.</p>
+                    <p class="project-desc" data-i18n="proj2-desc">API completa para gestão de Recursos Humanos, focada no controle preciso de horas trabalhadas, ponto eletrônico e gerenciamento de solicitações de ajuste.</p>
                     <div class="tech-tags">
                         <span class="tech-badge">C# 10+</span>
                         <span class="tech-badge">.NET</span>
                         <span class="tech-badge">SQL Server</span>
                     </div>
                     <ul class="project-features">
-                        <li>Sistema de registro de entrada/saída de ponto.</li>
-                        <li>Cálculo automatizado de banco de horas.</li>
-                        <li>Workflow para solicitação e aprovação de ajustes.</li>
-                        <li>Endpoints otimizados e testados.</li>
+                        <li data-i18n="proj2-f1">Sistema de registro de entrada/saída de ponto.</li>
+                        <li data-i18n="proj2-f2">Cálculo automatizado de banco de horas.</li>
+                        <li data-i18n="proj2-f3">Workflow para solicitação e aprovação de ajustes.</li>
+                        <li data-i18n="proj2-f4">Endpoints otimizados e testados.</li>
                     </ul>
                     <div style="margin-top: auto;">
-                        <a href="https://github.com/MarcusGomesp/ApiProjetoFaculdadeMeuPontoData" target="_blank" class="btn btn-outline">
+                        <a href="https://github.com/MarcusGomesp/ApiProjetoFaculdadeMeuPontoData" target="_blank" class="btn btn-outline" data-i18n="btn-repo-2">
                             <i class="fab fa-github"></i> Repositório
                         </a>
                     </div>
@@ -157,9 +177,9 @@
                 <div class="project-content">
                     <div class="project-header">
                         <i class="fas fa-newspaper"></i>
-                        <h3>Plataforma de Artigos</h3>
+                        <h3 data-i18n="proj3-title">Plataforma de Artigos</h3>
                     </div>
-                    <p class="project-desc">Aplicação Front-End colaborativa destinada a estudantes de tecnologia para compartilhamento de artigos, tutoriais e tendências de mercado.</p>
+                    <p class="project-desc" data-i18n="proj3-desc">Aplicação Front-End colaborativa destinada a estudantes de tecnologia para compartilhamento de artigos, tutoriais e tendências de mercado.</p>
                     <div class="tech-tags">
                         <span class="tech-badge">HTML5</span>
                         <span class="tech-badge">CSS3</span>
@@ -167,12 +187,12 @@
                         <span class="tech-badge">Integração API</span>
                     </div>
                     <ul class="project-features">
-                        <li>Interface fluída, moderna e 100% responsiva.</li>
-                        <li>Sistema dinâmico de categorização e busca.</li>
-                        <li>Consumo de APIs externas via Fetch API.</li>
+                        <li data-i18n="proj3-f1">Interface fluída, moderna e 100% responsiva.</li>
+                        <li data-i18n="proj3-f2">Sistema dinâmico de categorização e busca.</li>
+                        <li data-i18n="proj3-f3">Consumo de APIs externas via Fetch API.</li>
                     </ul>
                     <div style="margin-top: auto;">
-                        <a href="https://github.com/KauanG-bot/Programming-Students-Article" target="_blank" class="btn btn-outline">
+                        <a href="https://github.com/KauanG-bot/Programming-Students-Article" target="_blank" class="btn btn-outline" data-i18n="btn-repo-3">
                             <i class="fab fa-github"></i> Repositório
                         </a>
                     </div>
@@ -184,55 +204,55 @@
 
     <!-- Seção Formação -->
     <section id="formacao" class="container reveal">
-        <h2 class="section-title"><span>03.</span> Trajetória Acadêmica</h2>
-        
+        <h2 class="section-title" data-i18n="edu-title"><span>03.</span> Trajetória Acadêmica</h2>
+
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
                 <div class="timeline-content">
-                    <div class="timeline-date">Fev 2025 — Dez 2026 (Previsão)</div>
-                    <h3>Bacharelado em Ciência da Computação</h3>
-                    <p style="color: var(--text-muted); margin-top: 5px;">Universidade Nove de Julho</p>
-                    <p style="font-size: 0.9rem; margin-top: 10px; color: #cbd5e1;">Aprofundamento em algoritmos complexos, estrutura de dados, inteligência artificial e arquitetura de computadores.</p>
+                    <div class="timeline-date" data-i18n="edu1-date">Fev 2025 — Dez 2026 (Previsão)</div>
+                    <h3 data-i18n="edu1-title">Bacharelado em Ciência da Computação</h3>
+                    <p style="color: var(--text-muted); margin-top: 5px;" data-i18n="edu-uni1">Universidade Nove de Julho</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px; color: #cbd5e1;" data-i18n="edu1-desc">Aprofundamento em algoritmos complexos, estrutura de dados, inteligência artificial e arquitetura de computadores.</p>
                 </div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
                 <div class="timeline-content">
-                    <div class="timeline-date">Fev 2022 — Set 2024</div>
-                    <h3>Análise e Desenvolvimento de Sistemas</h3>
-                    <p style="color: var(--text-muted); margin-top: 5px;">Universidade Nove de Julho</p>
-                    <p style="font-size: 0.9rem; margin-top: 10px; color: #cbd5e1;">Foco prático em engenharia de software, modelagem de banco de dados e desenvolvimento ágil de aplicações web e backend.</p>
+                    <div class="timeline-date" data-i18n="edu2-date">Fev 2022 — Set 2024</div>
+                    <h3 data-i18n="edu2-title">Análise e Desenvolvimento de Sistemas</h3>
+                    <p style="color: var(--text-muted); margin-top: 5px;" data-i18n="edu-uni2">Universidade Nove de Julho</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px; color: #cbd5e1;" data-i18n="edu2-desc">Foco prático em engenharia de software, modelagem de banco de dados e desenvolvimento ágil de aplicações web e backend.</p>
                 </div>
             </div>
         </div>
 
-        <h3 style="text-align: center; margin: 4rem 0 2rem; font-size: 1.8rem;">Certificações & Cursos</h3>
+        <h3 id="certificacoes" style="text-align: center; margin: 4rem 0 2rem; font-size: 1.8rem;" data-i18n="certs-title">Certificações & Cursos</h3>
         <div class="cert-grid">
             <div class="cert-card">
                 <i class="fas fa-certificate"></i>
-                <h3>Programação Orientada a Objetos com C#</h3>
+                <h3 data-i18n="cert1">Programação Orientada a Objetos com C#</h3>
             </div>
             <div class="cert-card">
                 <i class="fas fa-certificate"></i>
-                <h3>Linguagem Avançada C#</h3>
+                <h3 data-i18n="cert2">Linguagem Avançada C#</h3>
             </div>
             <div class="cert-card">
                 <i class="fas fa-certificate"></i>
-                <h3>Web API ASP.NET Core Essencial (.NET 8)</h3>
+                <h3 data-i18n="cert3">Web API ASP.NET Core Essencial (.NET 8)</h3>
             </div>
             <div class="cert-card">
                 <i class="fas fa-certificate"></i>
-                <h3>Testes Automáticos de Software</h3>
+                <h3 data-i18n="cert4">Testes Automáticos de Software</h3>
             </div>
             <div class="cert-card">
                 <i class="fas fa-certificate"></i>
-                <h3>Postman: Do Zero ao Avançado</h3>
+                <h3 data-i18n="cert5">Postman: Do Zero ao Avançado</h3>
             </div>
             <div class="cert-card">
                 <i class="fas fa-certificate"></i>
-                <h3>Mensageria com RabbitMQ</h3>
+                <h3 data-i18n="cert6">Mensageria com RabbitMQ</h3>
             </div>
         </div>
     </section>
@@ -240,11 +260,13 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="tech-font" style="margin-bottom: 10px;">> Desenvolvido com <i class="fas fa-heart" style="color: var(--primary);"></i> e código limpo.</p>
-            <p>&copy; 2026 Marcus Vinicius Gomes Pereira. Todos os direitos reservados.</p>
+            <p class="tech-font" style="margin-bottom: 10px;" data-i18n="footer-made">> Desenvolvido com <i class="fas fa-heart" style="color: var(--primary);"></i> e código limpo.</p>
+            <p data-i18n="footer-rights">&copy; 2026 Marcus Vinicius Gomes Pereira. Todos os direitos reservados.</p>
         </div>
     </footer>
 
+
     <script src="script.js"></script>
 </body>
+
 </html>
