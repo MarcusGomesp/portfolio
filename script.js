@@ -1,18 +1,5 @@
 'use strict';
 
-/**
- * Portfólio — Marcus Vinicius
- *
- * Notas de segurança:
- * - Nenhuma chave de API, token ou segredo deve ser adicionado a este
- *   arquivo: ele roda 100% no navegador do visitante e qualquer valor
- *   aqui é público, mesmo "escondido" ou minificado.
- * - Conteúdo dinâmico é inserido via textContent/DOM (nunca innerHTML)
- *   para eliminar qualquer superfície de XSS. A única exceção é o
- *   dicionário TRANSLATIONS abaixo, que é usado com innerHTML — isso é
- *   seguro porque o conteúdo é 100% estático, escrito por nós, e nunca
- *   incorpora entrada do usuário ou de terceiros.
- */
 
 (function () {
   const TRANSLATIONS = {
