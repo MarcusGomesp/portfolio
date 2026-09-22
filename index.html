@@ -5,7 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
+  <!--
+  Cabeçalhos de segurança via <meta>: são uma camada extra no cliente.
+  O ideal, ao publicar (Netlify/Vercel/Cloudflare Pages), é também
+  configurar estes mesmos headers no servidor (HTTP response headers),
+  pois <meta> não cobre X-Frame-Options nem X-Content-Type-Options.
+-->
   <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
   script-src 'self';
@@ -53,7 +58,13 @@
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
     rel="stylesheet" referrerpolicy="no-referrer">
 
-
+  <!--
+  Font Awesome via cdnjs. Ao publicar, recomenda-se adicionar o atributo
+  `integrity="sha512-..."` (Subresource Integrity) com o hash exato da
+  versão travada — copie-o direto de https://cdnjs.com/libraries/font-awesome/6.4.0
+  antes de ir para produção, para o navegador recusar o arquivo caso o CDN
+  seja comprometido.
+-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer">
 
@@ -326,6 +337,11 @@
               ao Avançado</span><span class="provider">Udemy</span></li>
           <li class="cert-row"><i class="fas fa-check" aria-hidden="true"></i><span data-i18n="cert6">Mensageria com
               RabbitMQ</span><span class="provider">Udemy</span></li>
+          <li class="cert-row"><i class="fas fa-check" aria-hidden="true"></i><span data-i18n="cert7">MD-102T00:
+              Microsoft 365 Endpoint Administrator</span><span class="provider">Koenig Solutions</span><a
+              class="cert-view" href="md-102-koenig.jpg" target="_blank" rel="noopener noreferrer"
+              aria-label="Ver certificado: MD-102T00"><i class="fas fa-up-right-from-square" aria-hidden="true"></i></a>
+          </li>
         </ul>
       </div>
     </section>
@@ -336,7 +352,12 @@
         <h2 data-i18n="contact-h2">Vamos conversar?</h2>
         <p data-i18n="contact-p">Aberto a oportunidades como desenvolvedor back-end .NET.</p>
         <div class="contact-actions">
-
+          <!--
+        O href é montado via script.js a partir de data-user/data-domain,
+        em vez de um mailto: pronto no HTML. Isso não é infalível contra
+        bots avançados, mas evita a forma mais comum de coleta automática
+        de e-mails (raspagem de texto estático).
+      -->
           <a id="contact-email" class="btn btn-primary" href="#" data-user="marcus_1609" data-domain="outlook.com"
             rel="nofollow">
             <i class="fas fa-envelope" aria-hidden="true"></i> <span>marcus_1609@outlook.com</span>
