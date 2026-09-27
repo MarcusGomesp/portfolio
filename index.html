@@ -75,15 +75,24 @@
 
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <div id="preloader" role="status" aria-live="polite">
-    <div class="loader-box mono">
-      <div class="loader-top"><span class="loader-dot" aria-hidden="true"></span><span id="loader-text">Restaurando
-          pacotes NuGet...</span></div>
-      <div class="loader-bar-track">
-        <div class="loader-bar" id="loader-bar"></div>
+  <!-- ABERTURA: uma requisição percorre as camadas da arquitetura e volta com 200 OK -->
+  <div id="preloader" class="intro" role="status" aria-live="polite">
+    <div class="intro-stage">
+      <p class="intro-cmd mono"><span class="p">$</span> curl marcusgomes.dev/api/profile</p>
+
+      <div class="arch" aria-hidden="true">
+        <div class="node n1"><i class="fas fa-laptop"></i><span class="node-name" data-i18n="intro-client">Cliente</span><span class="node-sub mono">browser</span></div>
+        <div class="wire w1"><span class="req"></span><span class="res"></span></div>
+        <div class="node n2"><i class="fas fa-server"></i><span class="node-name">API</span><span class="node-sub mono">ASP.NET Core</span></div>
+        <div class="wire w2"><span class="req"></span><span class="res"></span></div>
+        <div class="node n3"><i class="fas fa-gears"></i><span class="node-name">Service</span><span class="node-sub mono" data-i18n="intro-rules">regras de negócio</span></div>
+        <div class="wire w3"><span class="req"></span><span class="res"></span></div>
+        <div class="node n4"><i class="fas fa-database"></i><span class="node-name">SQL Server</span><span class="node-sub mono" data-i18n="intro-data">dados</span></div>
       </div>
-      <div class="loader-line">marcus.dev <span id="loader-pct">0%</span></div>
+
+      <p class="intro-status mono"><span class="ok">200 OK</span> · <span id="intro-ms">—</span> · <span data-i18n="intro-ready">abrindo portfólio</span></p>
     </div>
+    <button class="intro-skip mono" id="intro-skip" type="button"><span data-i18n="intro-skip">Pular</span> <kbd>Esc</kbd></button>
   </div>
 
   <div class="bg-grid" aria-hidden="true"></div>

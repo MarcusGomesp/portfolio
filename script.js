@@ -32,7 +32,8 @@
       'contact-tag': '// contato', 'contact-h2': 'Vamos conversar?', 'contact-p': 'Aberto a oportunidades como desenvolvedor back-end .NET.',
       'footer-cmd': 'exit 0',
       heroJson: { name: 'Marcus Vinicius Gomes', role: 'Back-End Developer', stack: ['.NET', 'C#', 'ASP.NET Core'], location: 'São Paulo, BR', status: 'disponível_para_oportunidades' },
-      boot: ['Restaurando pacotes NuGet...', 'Compilando solução...', 'Executando migrations...', 'Servidor ouvindo em :443', 'Pronto.']
+      'intro-client': 'Cliente', 'intro-rules': 'regras de negócio', 'intro-data': 'dados', 'intro-ready': 'abrindo portfólio', 'intro-skip': 'Pular',
+      'cert7': 'MD-102T00: Microsoft 365 Endpoint Administrator'
     },
     en: {
       'route-about': '/about', 'route-projects': '/projects', 'route-education': '/education', 'route-certs': '/certifications',
@@ -63,12 +64,15 @@
       'contact-tag': '// contact', 'contact-h2': "Let's talk?", 'contact-p': 'Open to opportunities as a .NET back-end developer.',
       'footer-cmd': 'exit 0',
       heroJson: { name: 'Marcus Vinicius Gomes', role: 'Back-End Developer', stack: ['.NET', 'C#', 'ASP.NET Core'], location: 'São Paulo, BR', status: 'open_to_opportunities' },
-      boot: ['Restoring NuGet packages...', 'Building solution...', 'Running migrations...', 'Server listening on :443', 'Ready.']
+      'intro-client': 'Client', 'intro-rules': 'business logic', 'intro-data': 'data', 'intro-ready': 'opening portfolio', 'intro-skip': 'Skip',
+      'cert7': 'MD-102T00: Microsoft 365 Endpoint Administrator'
     }
   };
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let currentLang = 'pt';
+  let typingTimer = null;   // permite cancelar uma digitação em andamento (troca rápida de idioma, fim da abertura)
+  let introPlaying = false; // enquanto a abertura roda, o hero espera para digitar à vista do visitante
 
   /**
    * Monta a resposta JSON do hero como nós de DOM reais (createElement +
@@ -119,6 +123,7 @@
 
   /** Efeito de "digitação" no hero; pula direto para o resultado final se o usuário preferir menos movimento. */
   function typeHeroJson(target, obj) {
+    clearInterval(typingTimer);
     if (prefersReducedMotion) {
       target.textContent = '';
       target.appendChild(buildJsonFragment(obj));
@@ -129,11 +134,11 @@
     let i = 0;
     target.textContent = '';
 
-    const timer = setInterval(() => {
+    typingTimer = setInterval(() => {
       target.textContent = plain.slice(0, i);
       i += 2;
       if (i > plain.length) {
-        clearInterval(timer);
+        clearInterval(typingTimer);
         target.textContent = '';
         target.appendChild(buildJsonFragment(obj));
       }
@@ -154,8 +159,12 @@
       if (value) el.innerHTML = value;
     });
 
+    if (!introPlaying) typeHero();
+  }
+
+  function typeHero() {
     const heroJson = document.getElementById('hero-json');
-    if (heroJson) typeHeroJson(heroJson, TRANSLATIONS[lang].heroJson);
+    if (heroJson) typeHeroJson(heroJson, TRANSLATIONS[currentLang].heroJson);
   }
 
   /** Monta o mailto: em runtime a partir de data-user/data-domain, em vez de deixá-lo pronto no HTML estático. */
@@ -167,34 +176,58 @@
     if (user && domain) link.href = `mailto:${user}@${domain}`;
   }
 
-  function runPreloader() {
-    const preloader = document.getElementById('preloader');
-    const bar = document.getElementById('loader-bar');
-    const pct = document.getElementById('loader-pct');
-    const text = document.getElementById('loader-text');
-    if (!preloader || !bar || !pct || !text) return;
+  /**
+   * Abertura: uma requisição percorre Cliente → API → Service → SQL Server e volta com 200 OK.
+   * - Toda a animação é CSS; aqui só controlamos início, fim e o atalho para pular.
+   * - Roda uma vez por sessão (sessionStorage) e é pulada para quem prefere menos movimento.
+   * - O tempo exibido é o carregamento real da página, medido pelo navegador.
+   */
+  const INTRO_DURATION_MS = 3900;
+  const INTRO_SEEN_KEY = 'mvg-intro-seen';
 
-    let progress = 0;
-    const duration = prefersReducedMotion ? 300 : 1800;
-    const step = 100 / (duration / 25);
+  function runIntro() {
+    const intro = document.getElementById('preloader');
+    if (!intro) return;
 
-    const timer = setInterval(() => {
-      progress += step;
-      const boot = TRANSLATIONS[currentLang].boot;
-      if (progress > 20 && progress < 40) text.textContent = boot[1];
-      else if (progress > 40 && progress < 65) text.textContent = boot[2];
-      else if (progress > 65 && progress < 88) text.textContent = boot[3];
-      else if (progress >= 95) text.textContent = boot[4];
+    let seen = false;
+    try { seen = sessionStorage.getItem(INTRO_SEEN_KEY) === '1'; } catch (e) { /* storage bloqueado: segue o fluxo normal */ }
 
-      if (progress >= 100) {
-        progress = 100;
-        clearInterval(timer);
-        preloader.classList.add('fade-out');
-        document.body.classList.remove('loading');
-      }
-      bar.style.width = `${progress}%`;
-      pct.textContent = `${Math.floor(progress)}%`;
-    }, 25);
+    let finished = false;
+    let timer = null;
+
+    const onKey = (e) => {
+      if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') finish();
+    };
+
+    function finish() {
+      if (finished) return;
+      finished = true;
+      clearTimeout(timer);
+      document.removeEventListener('keydown', onKey);
+      intro.classList.add('fade-out');
+      document.body.classList.remove('loading');
+      introPlaying = false;
+      typeHero();
+      try { sessionStorage.setItem(INTRO_SEEN_KEY, '1'); } catch (e) { /* ignora */ }
+    }
+
+    if (seen || prefersReducedMotion) {
+      intro.classList.add('instant');
+      finish();
+      return;
+    }
+
+    const ms = document.getElementById('intro-ms');
+    if (ms) ms.textContent = `${Math.max(1, Math.round(performance.now()))}ms`;
+
+    introPlaying = true;
+    intro.classList.add('play');
+    timer = setTimeout(finish, INTRO_DURATION_MS);
+
+    const skip = document.getElementById('intro-skip');
+    if (skip) skip.addEventListener('click', finish);
+    intro.addEventListener('click', finish);
+    document.addEventListener('keydown', onKey);
   }
 
   /** IntersectionObserver em vez de recalcular tudo a cada evento de scroll — mais barato e não bloqueia a thread principal. */
@@ -235,11 +268,12 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
+    introPlaying = document.getElementById('preloader') !== null;
     applyLanguage(currentLang);
     wireObfuscatedEmail();
     wireLangToggle();
     wireMobileMenu();
     wireScrollReveal();
-    runPreloader();
+    runIntro();
   });
 })();
