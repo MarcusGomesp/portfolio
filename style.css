@@ -121,18 +121,44 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(ellipse 60% 50% at 50% 45%, #10141c 0%, var(--bg) 70%);
-  transition: opacity 0.45s ease, visibility 0.45s ease;
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 45%,
+    #10141c 0%,
+    var(--bg) 70%
+  );
+  transition:
+    opacity 0.45s ease,
+    visibility 0.45s ease;
 }
-.intro.fade-out { opacity: 0; visibility: hidden; pointer-events: none; }
-.intro.instant { transition: none; }
+.intro.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.intro.instant {
+  transition: none;
+}
 
-.intro-stage { width: min(92vw, 900px); text-align: center; }
+.intro-stage {
+  width: min(92vw, 900px);
+  text-align: center;
+}
 
-.intro-cmd { color: var(--muted); font-size: 0.85rem; margin-bottom: 2.4rem; opacity: 0; }
-.intro-cmd .p { color: var(--get); }
+.intro-cmd {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 2.4rem;
+  opacity: 0;
+}
+.intro-cmd .p {
+  color: var(--get);
+}
 
-.arch { display: flex; align-items: center; justify-content: center; }
+.arch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .node {
   flex: 0 0 auto;
@@ -149,14 +175,40 @@ ul {
   opacity: 0;
   transform: translateY(10px) scale(0.96);
 }
-.node i { font-size: 1.25rem; margin-bottom: 0.35rem; }
-.node-name { font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--text); }
-.node-sub { font-size: 0.66rem; }
+.node i {
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+.node-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.node-sub {
+  font-size: 0.66rem;
+}
 
-.n1 { --in: 0.15s; --req: 1.2s;  --res: 2.85s; }
-.n2 { --in: 0.35s; --req: 1.55s; --res: 2.65s; }
-.n3 { --in: 0.55s; --req: 1.8s;  --res: 2.45s; }
-.n4 { --in: 0.75s; --req: 2.05s; --res: 2.2s; }
+.n1 {
+  --in: 0.15s;
+  --req: 1.2s;
+  --res: 2.85s;
+}
+.n2 {
+  --in: 0.35s;
+  --req: 1.55s;
+  --res: 2.65s;
+}
+.n3 {
+  --in: 0.55s;
+  --req: 1.8s;
+  --res: 2.45s;
+}
+.n4 {
+  --in: 0.75s;
+  --req: 2.05s;
+  --res: 2.2s;
+}
 
 .wire {
   flex: 1 1 auto;
@@ -167,9 +219,21 @@ ul {
   transform: scaleX(0);
   transform-origin: left center;
 }
-.w1 { --draw: 0.5s; --rq: 1.3s;  --rs: 2.65s; }
-.w2 { --draw: 0.7s; --rq: 1.55s; --rs: 2.45s; }
-.w3 { --draw: 0.9s; --rq: 1.8s;  --rs: 2.25s; }
+.w1 {
+  --draw: 0.5s;
+  --rq: 1.3s;
+  --rs: 2.65s;
+}
+.w2 {
+  --draw: 0.7s;
+  --rq: 1.55s;
+  --rs: 2.45s;
+}
+.w3 {
+  --draw: 0.9s;
+  --rq: 1.8s;
+  --rs: 2.25s;
+}
 
 .wire .req,
 .wire .res {
@@ -181,11 +245,27 @@ ul {
   border-radius: 50%;
   opacity: 0;
 }
-.wire .req { left: 0; background: var(--accent); box-shadow: 0 0 14px var(--accent); }
-.wire .res { left: calc(100% - 10px); background: var(--get); box-shadow: 0 0 14px var(--get); }
+.wire .req {
+  left: 0;
+  background: var(--accent);
+  box-shadow: 0 0 14px var(--accent);
+}
+.wire .res {
+  left: calc(100% - 10px);
+  background: var(--get);
+  box-shadow: 0 0 14px var(--get);
+}
 
-.intro-status { margin-top: 2.4rem; font-size: 0.85rem; color: var(--muted); opacity: 0; }
-.intro-status .ok { color: var(--get); font-weight: 600; }
+.intro-status {
+  margin-top: 2.4rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  opacity: 0;
+}
+.intro-status .ok {
+  color: var(--get);
+  font-weight: 600;
+}
 
 .intro-skip {
   position: absolute;
@@ -199,7 +279,10 @@ ul {
   font-size: 0.72rem;
   cursor: pointer;
 }
-.intro-skip:hover { color: var(--text); border-color: var(--muted); }
+.intro-skip:hover {
+  color: var(--text);
+  border-color: var(--muted);
+}
 .intro-skip kbd {
   font-family: inherit;
   border: 1px solid var(--line);
@@ -209,7 +292,9 @@ ul {
 }
 
 /* ---- animações (só com .play) ---- */
-.intro.play .intro-cmd { animation: introFade 0.4s ease forwards; }
+.intro.play .intro-cmd {
+  animation: introFade 0.4s ease forwards;
+}
 .intro.play .node {
   animation:
     nodeIn 0.4s ease var(--in) forwards,
@@ -221,35 +306,97 @@ ul {
     wireDraw 0.35s ease var(--draw) forwards,
     wireOk 0.25s ease calc(var(--rs) + 0.15s) forwards;
 }
-.intro.play .wire .req { animation: reqMove 0.25s ease-in-out var(--rq); }
-.intro.play .wire .res { animation: resMove 0.2s ease-in-out var(--rs); }
-.intro.play .intro-status { animation: introFade 0.4s ease 2.95s forwards; }
+.intro.play .wire .req {
+  animation: reqMove 0.25s ease-in-out var(--rq);
+}
+.intro.play .wire .res {
+  animation: resMove 0.2s ease-in-out var(--rs);
+}
+.intro.play .intro-status {
+  animation: introFade 0.4s ease 2.95s forwards;
+}
 
-@keyframes introFade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-@keyframes nodeIn { to { opacity: 1; transform: none; } }
+@keyframes introFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes nodeIn {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
 @keyframes nodeReq {
-  0%, 100% { border-color: var(--line); color: var(--muted); box-shadow: none; }
-  35% { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft), 0 0 24px rgba(255, 180, 84, 0.25); }
+  0%,
+  100% {
+    border-color: var(--line);
+    color: var(--muted);
+    box-shadow: none;
+  }
+  35% {
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow:
+      0 0 0 4px var(--accent-soft),
+      0 0 24px rgba(255, 180, 84, 0.25);
+  }
 }
 @keyframes nodeOk {
-  to { border-color: var(--get); color: var(--get); box-shadow: 0 0 0 4px var(--get-soft); }
+  to {
+    border-color: var(--get);
+    color: var(--get);
+    box-shadow: 0 0 0 4px var(--get-soft);
+  }
 }
-@keyframes wireDraw { to { transform: scaleX(1); } }
-@keyframes wireOk { to { background: var(--get); } }
+@keyframes wireDraw {
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes wireOk {
+  to {
+    background: var(--get);
+  }
+}
 @keyframes reqMove {
-  from { left: 0; opacity: 1; }
-  to { left: calc(100% - 10px); opacity: 1; }
+  from {
+    left: 0;
+    opacity: 1;
+  }
+  to {
+    left: calc(100% - 10px);
+    opacity: 1;
+  }
 }
 @keyframes resMove {
-  from { left: calc(100% - 10px); opacity: 1; }
-  to { left: 0; opacity: 1; }
+  from {
+    left: calc(100% - 10px);
+    opacity: 1;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
 }
 
 /* ---- celular: camadas empilhadas na vertical ---- */
 @media (max-width: 720px) {
-  .intro-stage { width: 88vw; }
-  .intro-cmd { font-size: 0.72rem; margin-bottom: 1.6rem; }
-  .arch { flex-direction: column; }
+  .intro-stage {
+    width: 88vw;
+  }
+  .intro-cmd {
+    font-size: 0.72rem;
+    margin-bottom: 1.6rem;
+  }
+  .arch {
+    flex-direction: column;
+  }
   .node {
     width: min(260px, 80vw);
     flex-direction: row;
@@ -257,8 +404,13 @@ ul {
     gap: 0.6rem;
     padding: 0.7rem 1rem;
   }
-  .node i { margin: 0; width: 1.3rem; }
-  .node-sub { margin-left: auto; }
+  .node i {
+    margin: 0;
+    width: 1.3rem;
+  }
+  .node-sub {
+    margin-left: auto;
+  }
   .wire {
     flex: 0 0 26px;
     width: 2px;
@@ -268,23 +420,59 @@ ul {
     transform-origin: center top;
   }
   .wire .req,
-  .wire .res { left: 50%; margin: 0 0 0 -5px; }
-  .wire .req { top: 0; }
-  .wire .res { top: calc(100% - 10px); }
-  .intro.play .wire { animation-name: wireDrawV, wireOk; }
-  .intro.play .wire .req { animation-name: reqMoveV; }
-  .intro.play .wire .res { animation-name: resMoveV; }
-  .intro-status { margin-top: 1.6rem; font-size: 0.75rem; }
+  .wire .res {
+    left: 50%;
+    margin: 0 0 0 -5px;
+  }
+  .wire .req {
+    top: 0;
+  }
+  .wire .res {
+    top: calc(100% - 10px);
+  }
+  .intro.play .wire {
+    animation-name: wireDrawV, wireOk;
+  }
+  .intro.play .wire .req {
+    animation-name: reqMoveV;
+  }
+  .intro.play .wire .res {
+    animation-name: resMoveV;
+  }
+  .intro-status {
+    margin-top: 1.6rem;
+    font-size: 0.75rem;
+  }
 }
-@media (hover: none) { .intro-skip kbd { display: none; } }
-@keyframes wireDrawV { to { transform: scaleY(1); } }
+@media (hover: none) {
+  .intro-skip kbd {
+    display: none;
+  }
+}
+@keyframes wireDrawV {
+  to {
+    transform: scaleY(1);
+  }
+}
 @keyframes reqMoveV {
-  from { top: 0; opacity: 1; }
-  to { top: calc(100% - 10px); opacity: 1; }
+  from {
+    top: 0;
+    opacity: 1;
+  }
+  to {
+    top: calc(100% - 10px);
+    opacity: 1;
+  }
 }
 @keyframes resMoveV {
-  from { top: calc(100% - 10px); opacity: 1; }
-  to { top: 0; opacity: 1; }
+  from {
+    top: calc(100% - 10px);
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 @keyframes blink {
@@ -311,7 +499,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding-top: 1rem; /* só vertical: o espaçamento lateral vem do .container */
+  padding-bottom: 1rem;
 }
 .logo {
   font-family: "Space Grotesk", sans-serif;
@@ -637,7 +826,7 @@ section {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
   gap: 1.4rem;
 }
 .project-card {
@@ -913,21 +1102,56 @@ footer .rights {
   transform: translateY(0);
 }
 
+/* Notebooks menores: com 5 rotas no menu, o selo "disponível" sai para o menu caber */
+@media (max-width: 1180px) {
+  .status-pill {
+    display: none;
+  }
+  .nav-right {
+    gap: 1rem;
+  }
+  .nav-links a {
+    padding: 0.4rem 0.5rem;
+  }
+}
+
 /* =========== AJUSTES PARA CELULAR ===========
    Antes, no celular a página ficava mais larga que a tela (≈485px em 390px)
    e dava para arrastar para o lado. Estas regras fazem tudo caber. */
 @media (max-width: 860px) {
-  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 @media (max-width: 600px) {
-  .container { padding-left: 1.1rem; padding-right: 1.1rem; }
-  section { padding: 4rem 0; }
-  .nav-right { gap: 0.7rem; }
-  .status-pill { display: none; }
-  .skills-grid { grid-template-columns: 1fr; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .terminal-body { overflow-x: auto; font-size: 0.74rem; padding: 1rem; }
-  .hero h1 { font-size: 1.9rem; }
+  .container {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+  section {
+    padding: 4rem 0;
+  }
+  .nav-right {
+    gap: 0.7rem;
+  }
+  .status-pill {
+    display: none;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .terminal-body {
+    overflow-x: auto;
+    font-size: 0.74rem;
+    padding: 1rem;
+  }
+  .hero h1 {
+    font-size: 1.9rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
