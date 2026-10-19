@@ -1160,3 +1160,12 @@ footer .rights {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Três botões do hero (LinkedIn, Projetos, Currículo) na mesma linha no desktop */
+.hero-actions .btn {
+  padding-left: 1.05rem;
+  padding-right: 1.05rem;
+}
+.hero-actions {
+  gap: 0.65rem;
+}
