@@ -30,6 +30,7 @@
       "hero-sub":
         "Desenvolvedor Back-End focado no ecossistema .NET — arquitetura em camadas, integrações robustas e código pensado para durar.",
       "btn-linkedin": "Conectar no LinkedIn",
+      "status-pill": "disponível",
       "btn-projects": "Ver Projetos",
       "btn-cv": "Baixar Currículo",
       "btn-repo": "Repositório",
@@ -122,6 +123,7 @@
       "hero-sub":
         "Back-End Developer focused on the .NET ecosystem — layered architecture, robust integrations, and code built to last.",
       "btn-linkedin": "Connect on LinkedIn",
+      "status-pill": "available",
       "btn-projects": "View Projects",
       "btn-cv": "Download Résumé",
       "btn-repo": "Repository",
