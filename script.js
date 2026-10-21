@@ -26,7 +26,6 @@
       "route-projects": "/projetos",
       "route-education": "/formacao",
       "route-certs": "/certificacoes",
-      "status-pill": "disponível",
       "hero-h1": "Eu escrevo <span>APIs</span> que não caem.",
       "hero-sub":
         "Desenvolvedor Back-End focado no ecossistema .NET — arquitetura em camadas, integrações robustas e código pensado para durar.",
@@ -89,7 +88,6 @@
         role: "Back-End Developer",
         stack: [".NET", "C#", "ASP.NET Core"],
         location: "São Paulo, BR",
-        status: "disponível_para_oportunidades",
       },
       "intro-client": "Cliente",
       "intro-rules": "regras de negócio",
@@ -121,7 +119,6 @@
       "route-projects": "/projects",
       "route-education": "/education",
       "route-certs": "/certifications",
-      "status-pill": "available",
       "hero-h1": "I write <span>APIs</span> that don't fall over.",
       "hero-sub":
         "Back-End Developer focused on the .NET ecosystem — layered architecture, robust integrations, and code built to last.",
@@ -184,7 +181,6 @@
         role: "Back-End Developer",
         stack: [".NET", "C#", "ASP.NET Core"],
         location: "São Paulo, BR",
-        status: "open_to_opportunities",
       },
       "intro-client": "Client",
       "intro-rules": "business logic",
