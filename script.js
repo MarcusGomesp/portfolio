@@ -81,7 +81,6 @@
       "certs-h2": "Certificações & cursos",
       "contact-tag": "// contato",
       "contact-h2": "Vamos conversar?",
-      "contact-p": "Aberto a oportunidades como desenvolvedor back-end .NET.",
       "footer-cmd": "exit 0",
       heroJson: {
         name: "Marcus Vinicius Gomes",
@@ -174,7 +173,6 @@
       "certs-h2": "Certifications & courses",
       "contact-tag": "// contact",
       "contact-h2": "Let's talk?",
-      "contact-p": "Open to opportunities as a .NET back-end developer.",
       "footer-cmd": "exit 0",
       heroJson: {
         name: "Marcus Vinicius Gomes",
