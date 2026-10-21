@@ -1169,3 +1169,8 @@ footer .rights {
 .hero-actions {
   gap: 0.65rem;
 }
+
+/* espaço entre "Vamos conversar?" e os botões */
+.contact-actions {
+  margin-top: 1.6rem;
+}
