@@ -1270,3 +1270,19 @@ footer .rights {
     align-items: flex-start;
   }
 }
+
+/* ===== PROJETO CORPORATIVO (sem repositório público) ===== */
+.project-role {
+  color: var(--get);
+  font-size: 0.75rem;
+  margin: -0.2rem 0 0.7rem;
+}
+.btn-static {
+  cursor: default;
+  color: var(--muted);
+}
+.btn-static:hover {
+  transform: none;
+  border-color: var(--line);
+  color: var(--muted);
+}
